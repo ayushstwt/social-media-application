@@ -18,9 +18,10 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public  Integer id;
+
     public String firstName;
     public String lastName;
-    public  Integer id;
     public String email;
     public String password;
     public String gender;

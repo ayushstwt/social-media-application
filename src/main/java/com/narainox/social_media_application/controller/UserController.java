@@ -41,7 +41,7 @@ public class UserController {
         return ResponseHandler.generateResponse("User created successfully", HttpStatus.CREATED, user);
     }
 
-    @PutMapping
+    @PatchMapping
     public ResponseEntity<Object> updateUser(@Valid @RequestBody UpdateUserDto updateUserDto) {
         UserResponseDto user = userService.updateUser(updateUserDto);
         return ResponseHandler.generateResponse("User updated successfully", HttpStatus.OK, user);
