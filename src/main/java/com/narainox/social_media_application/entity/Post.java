@@ -5,29 +5,25 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
-
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Getter
 @Setter
-@ToString
-public class User {
+@Table(name = "tbl_post")
+@Entity
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public  Integer id;
+    private Integer id;
+    private String title;
+    private String content;
 
-    public String firstName;
-    public String lastName;
-    public String email;
-    public String password;
-    public String gender;
-    public LocalDateTime dateOfBirth;
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
-    @OneToMany(mappedBy = "user")
-    private List<Post> posts;
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
