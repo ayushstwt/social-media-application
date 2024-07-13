@@ -5,6 +5,7 @@ import com.narainox.social_media_application.dto.UpdateUserDto;
 import com.narainox.social_media_application.dto.UserResponseDto;
 import com.narainox.social_media_application.handler.ResponseHandler;
 import com.narainox.social_media_application.service.UserService;
+import com.narainox.social_media_application.utils.StatusConstants;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
