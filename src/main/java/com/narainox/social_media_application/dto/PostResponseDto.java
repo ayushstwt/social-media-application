@@ -1,6 +1,7 @@
 package com.narainox.social_media_application.dto;
 
 import com.narainox.social_media_application.entity.Post;
+import com.narainox.social_media_application.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +17,8 @@ public class PostResponseDto {
     private Integer id;
     private String title;
     private String content;
-    private int user;
+    private User user;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public PostResponseDto(Post post) {
-    }
 }

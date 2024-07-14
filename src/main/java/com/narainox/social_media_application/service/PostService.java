@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -34,6 +35,8 @@ public class PostService {
         post.setTitle(createPostDto.getTitle());
         post.setContent(createPostDto.getContent());
         post.setUser(user);
+        post.setCreatedAt(LocalDateTime.now());
+        post.setUpdatedAt(LocalDateTime.now());
         Post savedPost = postRepository.save(post);
         return postToPostResponseDto(savedPost);
     }
